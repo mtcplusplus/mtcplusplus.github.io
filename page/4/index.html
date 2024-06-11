@@ -45,6 +45,15 @@
 
   <title>mtmatt.Page</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEF64N8VXG"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WEF64N8VXG');
+      }
+    </script>
 
 
 
@@ -557,6 +566,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hackerrank-sorting-2-mark-and-toys/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ojques/hackerrank-sorting-2-mark-and-toys/" class="post-title-link" itemprop="url">HackerRank Sorting 2.Mark and Toys</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-14 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-14T08:00:00+08:00">2021-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>298</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：Mark-and-Toys-HackerRank"><a href="#題目連結：Mark-and-Toys-HackerRank" class="headerlink" title="題目連結：Mark and Toys | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/mark-and-toys/">Mark and Toys | HackerRank</a></h3><p>用Greedy，小的先放</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">maximumToys</span><span class="params">(vector&lt;<span class="type">int</span>&gt; ps, <span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(ps.<span class="built_in">begin</span>(),ps.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,ct=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:ps)&#123;</span><br><span class="line">        <span class="keyword">if</span>(sum+a&lt;k)&#123;</span><br><span class="line">            sum+=a;</span><br><span class="line">            ct++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ojques/hackerrank-sorting-2-mark-and-toys/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hackerrank-sorting-1-bubble-sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -647,7 +746,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hackerrank-sorting-2-mark-and-toys/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-array-1-2d-array-ds/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -661,7 +760,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hackerrank-sorting-2-mark-and-toys/" class="post-title-link" itemprop="url">HackerRank Sorting 2.Mark and Toys</a>
+            <a href="/ojques/hacker-rank-array-1-2d-array-ds/" class="post-title-link" itemprop="url">HackerRank Array 1.2D Array - DS</a>
         </h2>
 
         <div class="post-meta">
@@ -671,7 +770,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-07-14 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-14T08:00:00+08:00">2021-07-14</time>
+              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -689,7 +788,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>298</span>
+              <span>538</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -708,12 +807,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Mark-and-Toys-HackerRank"><a href="#題目連結：Mark-and-Toys-HackerRank" class="headerlink" title="題目連結：Mark and Toys | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/mark-and-toys/">Mark and Toys | HackerRank</a></h3><p>用Greedy，小的先放</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">maximumToys</span><span class="params">(vector&lt;<span class="type">int</span>&gt; ps, <span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(ps.<span class="built_in">begin</span>(),ps.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,ct=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:ps)&#123;</span><br><span class="line">        <span class="keyword">if</span>(sum+a&lt;k)&#123;</span><br><span class="line">            sum+=a;</span><br><span class="line">            ct++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：2D-Array-DS-HackerRank"><a href="#題目連結：2D-Array-DS-HackerRank" class="headerlink" title="題目連結：2D Array - DS | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/2d-array/">2D Array - DS | HackerRank</a></h3><p>如題，二維陣列</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">hourglassSum</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; arr)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> mx=<span class="number">-0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>()<span class="number">-2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;arr[i].<span class="built_in">size</span>()<span class="number">-2</span>;j++)&#123;</span><br><span class="line">            <span class="type">int</span> sum=arr[i][j]+</span><br><span class="line">                    arr[i][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i][j+<span class="number">2</span>]+</span><br><span class="line">                    arr[i+<span class="number">1</span>][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j+<span class="number">2</span>];</span><br><span class="line">            mx=<span class="built_in">max</span>(mx,sum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hackerrank-sorting-2-mark-and-toys/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-array-1-2d-array-ds/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -916,7 +1015,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-array-1-2d-array-ds/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-set-and-map-1-ransom-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -930,7 +1029,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hacker-rank-array-1-2d-array-ds/" class="post-title-link" itemprop="url">HackerRank Array 1.2D Array - DS</a>
+            <a href="/ojques/hacker-rank-set-and-map-1-ransom-note/" class="post-title-link" itemprop="url">HackerRank Set And Map 1.Ransom Note</a>
         </h2>
 
         <div class="post-meta">
@@ -958,7 +1057,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>538</span>
+              <span>497</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -977,102 +1076,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：2D-Array-DS-HackerRank"><a href="#題目連結：2D-Array-DS-HackerRank" class="headerlink" title="題目連結：2D Array - DS | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/2d-array/">2D Array - DS | HackerRank</a></h3><p>如題，二維陣列</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">hourglassSum</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; arr)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> mx=<span class="number">-0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>()<span class="number">-2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;arr[i].<span class="built_in">size</span>()<span class="number">-2</span>;j++)&#123;</span><br><span class="line">            <span class="type">int</span> sum=arr[i][j]+</span><br><span class="line">                    arr[i][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i][j+<span class="number">2</span>]+</span><br><span class="line">                    arr[i+<span class="number">1</span>][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j+<span class="number">1</span>]+</span><br><span class="line">                    arr[i+<span class="number">2</span>][j+<span class="number">2</span>];</span><br><span class="line">            mx=<span class="built_in">max</span>(mx,sum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：Hash-Tables-Ransom-Note-HackerRank"><a href="#題目連結：Hash-Tables-Ransom-Note-HackerRank" class="headerlink" title="題目連結：Hash Tables: Ransom Note | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/ctci-ransom-note/">Hash Tables: Ransom Note | HackerRank</a></h3><p>這APCS應該不會考吧？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">checkMagazine</span><span class="params">(vector&lt;string&gt; magazine, vector&lt;string&gt; note)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;string,<span class="type">int</span>&gt; m,n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:magazine)&#123;</span><br><span class="line">        m[a]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:note)&#123;</span><br><span class="line">        n[a]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m[a.first]&lt;n[a.first])&#123;</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;No\n&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Yes\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-array-1-2d-array-ds/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-array-5-array-manipulation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ojques/hacker-rank-array-5-array-manipulation/" class="post-title-link" itemprop="url">HackerRank Array 5.Array Manipulation</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>630</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：Array-Manipulation-HackerRank"><a href="#題目連結：Array-Manipulation-HackerRank" class="headerlink" title="題目連結：Array Manipulation | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/crush/">Array Manipulation | HackerRank</a></h3><p>只要算開始與結束即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">    <span class="type">int</span> s,e,c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="title">arrayManipulation</span><span class="params">(<span class="type">int</span> n, vector&lt;edge&gt; q)</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> mx=<span class="number">0</span>,now=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(q.<span class="built_in">begin</span>(),q.<span class="built_in">end</span>(),[](edge a,edge b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.s&lt;b.s;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="function">vector&lt;edge&gt; <span class="title">bk</span><span class="params">(q)</span></span>;</span><br><span class="line">    <span class="built_in">sort</span>(bk.<span class="built_in">begin</span>(),bk.<span class="built_in">end</span>(),[](edge a,edge b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.e&lt;b.e;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:q)&#123;</span><br><span class="line">        now+=a.c;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;q.<span class="built_in">size</span>() &amp;&amp; a.s&gt;bk[i].e)&#123;</span><br><span class="line">            now-=bk[i].c;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        mx=<span class="built_in">max</span>(mx,now);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-array-5-array-manipulation/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-set-and-map-1-ransom-note/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
