@@ -690,6 +690,186 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-chang-yun-chia-106-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/contest/cpp-chang-yun-chia-106-2/" class="post-title-link" itemprop="url">C++ 彰雲嘉區複賽 106-2 跑長編碼與資料壓縮</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-25 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-25T08:00:00+08:00">2021-07-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：e522-106-彰雲嘉區複賽-Q2-跑長編碼與資料壓縮"><a href="#題目連結：e522-106-彰雲嘉區複賽-Q2-跑長編碼與資料壓縮" class="headerlink" title="題目連結：e522: 106 彰雲嘉區複賽 - Q2 跑長編碼與資料壓縮"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=e522">e522: 106 彰雲嘉區複賽 - Q2 跑長編碼與資料壓縮</a></h3><p>字串基本應用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string num[<span class="number">10</span>]=&#123;<span class="string">&quot;000&quot;</span>,<span class="string">&quot;001&quot;</span>,<span class="string">&quot;010&quot;</span>,<span class="string">&quot;011&quot;</span>,<span class="string">&quot;100&quot;</span>,<span class="string">&quot;101&quot;</span>,<span class="string">&quot;110&quot;</span>,<span class="string">&quot;111&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">print</span><span class="params">(<span class="type">int</span> sum,<span class="type">char</span> bit)</span></span>&#123;</span><br><span class="line">    <span class="function">string <span class="title">re</span><span class="params">(<span class="number">1</span>,bit)</span></span>;</span><br><span class="line">    re+=num[sum];</span><br><span class="line">    re+=<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> iptNum=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;iptNum;</span><br><span class="line"></span><br><span class="line">    string bit,out;</span><br><span class="line">    <span class="built_in">getline</span>(cin,bit);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(iptNum--)&#123;</span><br><span class="line">        out=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin,bit);</span><br><span class="line">        <span class="type">int</span> j,sum=<span class="number">1</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> rate=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;bit.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(bit[j]!=<span class="string">&#x27;0&#x27;</span> &amp;&amp; bit[j]!=<span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="string">&quot;-1\n&quot;</span>;</span><br><span class="line">                j++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(bit[j<span class="number">-1</span>]==bit[j] &amp;&amp; sum&lt;<span class="number">7</span>)&#123;</span><br><span class="line">                sum++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                out+=<span class="built_in">print</span>(sum,bit[j<span class="number">-1</span>]);</span><br><span class="line">                rate+=<span class="number">4</span>;</span><br><span class="line">                sum=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        out+=<span class="built_in">print</span>(sum,bit[j<span class="number">-1</span>]);</span><br><span class="line">        rate+=<span class="number">4</span>;</span><br><span class="line">        rate*=<span class="number">1000</span>;</span><br><span class="line">        rate/=bit.<span class="built_in">size</span>();</span><br><span class="line">        rate=(rate+<span class="number">5</span>)/<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(bit[j<span class="number">-1</span>]==<span class="string">&#x27;0&#x27;</span> || bit[j<span class="number">-1</span>]==<span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">            cout&lt;&lt;out&lt;&lt;rate&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/contest/cpp-chang-yun-chia-106-2/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-chang-yun-chia-106-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/contest/cpp-chang-yun-chia-106-3/" class="post-title-link" itemprop="url">C++ 彰雲嘉區複賽 106-3 費波南希數列</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-25 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-25T08:00:00+08:00">2021-07-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>671</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：e523-106-彰雲嘉區複賽-Q3-費波南希數列"><a href="#題目連結：e523-106-彰雲嘉區複賽-Q3-費波南希數列" class="headerlink" title="題目連結：e523: 106 彰雲嘉區複賽 - Q3 費波南希數列"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=e523">e523: 106 彰雲嘉區複賽 - Q3 費波南希數列</a></h3><p>用到最簡單DP和二分搜(都可以不用)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n,f[<span class="number">200</span>];</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    f[<span class="number">0</span>]=<span class="number">-1</span>;f[<span class="number">1</span>]=<span class="number">1</span>;f[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">3</span>;i&lt;<span class="number">100</span>;i++)&#123;</span><br><span class="line">        f[i]=f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>];</span><br><span class="line">        <span class="keyword">if</span>(f[i]&lt;<span class="number">0</span>) f[i]=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        cin&gt;&gt;a;</span><br><span class="line">        <span class="type">int</span> it=<span class="built_in">lower_bound</span>(f,f+<span class="number">100</span>,a)-f;</span><br><span class="line">        <span class="keyword">if</span>(f[it]==a)&#123;</span><br><span class="line">            cout&lt;&lt;it;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/contest/cpp-chang-yun-chia-106-3/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-chang-yun-chia-106-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -847,186 +1027,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/contest/cpp-chang-yun-chia-106-4/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-chang-yun-chia-106-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/contest/cpp-chang-yun-chia-106-3/" class="post-title-link" itemprop="url">C++ 彰雲嘉區複賽 106-3 費波南希數列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-25 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-25T08:00:00+08:00">2021-07-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>671</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：e523-106-彰雲嘉區複賽-Q3-費波南希數列"><a href="#題目連結：e523-106-彰雲嘉區複賽-Q3-費波南希數列" class="headerlink" title="題目連結：e523: 106 彰雲嘉區複賽 - Q3 費波南希數列"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=e523">e523: 106 彰雲嘉區複賽 - Q3 費波南希數列</a></h3><p>用到最簡單DP和二分搜(都可以不用)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n,f[<span class="number">200</span>];</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    f[<span class="number">0</span>]=<span class="number">-1</span>;f[<span class="number">1</span>]=<span class="number">1</span>;f[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">3</span>;i&lt;<span class="number">100</span>;i++)&#123;</span><br><span class="line">        f[i]=f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>];</span><br><span class="line">        <span class="keyword">if</span>(f[i]&lt;<span class="number">0</span>) f[i]=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        cin&gt;&gt;a;</span><br><span class="line">        <span class="type">int</span> it=<span class="built_in">lower_bound</span>(f,f+<span class="number">100</span>,a)-f;</span><br><span class="line">        <span class="keyword">if</span>(f[it]==a)&#123;</span><br><span class="line">            cout&lt;&lt;it;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/contest/cpp-chang-yun-chia-106-3/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-chang-yun-chia-106-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/contest/cpp-chang-yun-chia-106-2/" class="post-title-link" itemprop="url">C++ 彰雲嘉區複賽 106-2 跑長編碼與資料壓縮</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-25 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-25T08:00:00+08:00">2021-07-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：e522-106-彰雲嘉區複賽-Q2-跑長編碼與資料壓縮"><a href="#題目連結：e522-106-彰雲嘉區複賽-Q2-跑長編碼與資料壓縮" class="headerlink" title="題目連結：e522: 106 彰雲嘉區複賽 - Q2 跑長編碼與資料壓縮"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=e522">e522: 106 彰雲嘉區複賽 - Q2 跑長編碼與資料壓縮</a></h3><p>字串基本應用</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string num[<span class="number">10</span>]=&#123;<span class="string">&quot;000&quot;</span>,<span class="string">&quot;001&quot;</span>,<span class="string">&quot;010&quot;</span>,<span class="string">&quot;011&quot;</span>,<span class="string">&quot;100&quot;</span>,<span class="string">&quot;101&quot;</span>,<span class="string">&quot;110&quot;</span>,<span class="string">&quot;111&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">print</span><span class="params">(<span class="type">int</span> sum,<span class="type">char</span> bit)</span></span>&#123;</span><br><span class="line">    <span class="function">string <span class="title">re</span><span class="params">(<span class="number">1</span>,bit)</span></span>;</span><br><span class="line">    re+=num[sum];</span><br><span class="line">    re+=<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> iptNum=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;iptNum;</span><br><span class="line"></span><br><span class="line">    string bit,out;</span><br><span class="line">    <span class="built_in">getline</span>(cin,bit);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(iptNum--)&#123;</span><br><span class="line">        out=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin,bit);</span><br><span class="line">        <span class="type">int</span> j,sum=<span class="number">1</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> rate=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;bit.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(bit[j]!=<span class="string">&#x27;0&#x27;</span> &amp;&amp; bit[j]!=<span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="string">&quot;-1\n&quot;</span>;</span><br><span class="line">                j++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(bit[j<span class="number">-1</span>]==bit[j] &amp;&amp; sum&lt;<span class="number">7</span>)&#123;</span><br><span class="line">                sum++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                out+=<span class="built_in">print</span>(sum,bit[j<span class="number">-1</span>]);</span><br><span class="line">                rate+=<span class="number">4</span>;</span><br><span class="line">                sum=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        out+=<span class="built_in">print</span>(sum,bit[j<span class="number">-1</span>]);</span><br><span class="line">        rate+=<span class="number">4</span>;</span><br><span class="line">        rate*=<span class="number">1000</span>;</span><br><span class="line">        rate/=bit.<span class="built_in">size</span>();</span><br><span class="line">        rate=(rate+<span class="number">5</span>)/<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(bit[j<span class="number">-1</span>]==<span class="string">&#x27;0&#x27;</span> || bit[j<span class="number">-1</span>]==<span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">            cout&lt;&lt;out&lt;&lt;rate&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/contest/cpp-chang-yun-chia-106-2/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
