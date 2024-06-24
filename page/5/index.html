@@ -296,7 +296,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-array-4-minimum-swaps-2/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-array-5-array-manipulation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -310,7 +310,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hacker-rank-array-4-minimum-swaps-2/" class="post-title-link" itemprop="url">HackerRank Array 4.Minimum Swaps 2</a>
+            <a href="/ojques/hacker-rank-array-5-array-manipulation/" class="post-title-link" itemprop="url">HackerRank Array 5.Array Manipulation</a>
         </h2>
 
         <div class="post-meta">
@@ -338,7 +338,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>413</span>
+              <span>630</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -357,102 +357,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Minimum-Swaps-2-HackerRank"><a href="#題目連結：Minimum-Swaps-2-HackerRank" class="headerlink" title="題目連結：Minimum Swaps 2 | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/minimum-swaps-2/">Minimum Swaps 2 | HackerRank</a></h3><p>注意算完(算之前亦可)要將兩數交換</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">minimumSwaps</span><span class="params">(vector&lt;<span class="type">int</span>&gt; arr)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">o</span><span class="params">(arr)</span></span>;</span><br><span class="line">    <span class="built_in">sort</span>(o.<span class="built_in">begin</span>(),o.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,update=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> m[<span class="number">100010</span>]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]!=o[i])&#123;</span><br><span class="line">            <span class="built_in">swap</span>(arr[i],arr[arr[i]<span class="number">-1</span>]);</span><br><span class="line">            ct++;</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：Array-Manipulation-HackerRank"><a href="#題目連結：Array-Manipulation-HackerRank" class="headerlink" title="題目連結：Array Manipulation | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/crush/">Array Manipulation | HackerRank</a></h3><p>只要算開始與結束即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">    <span class="type">int</span> s,e,c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="title">arrayManipulation</span><span class="params">(<span class="type">int</span> n, vector&lt;edge&gt; q)</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> mx=<span class="number">0</span>,now=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(q.<span class="built_in">begin</span>(),q.<span class="built_in">end</span>(),[](edge a,edge b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.s&lt;b.s;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="function">vector&lt;edge&gt; <span class="title">bk</span><span class="params">(q)</span></span>;</span><br><span class="line">    <span class="built_in">sort</span>(bk.<span class="built_in">begin</span>(),bk.<span class="built_in">end</span>(),[](edge a,edge b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.e&lt;b.e;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:q)&#123;</span><br><span class="line">        now+=a.c;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;q.<span class="built_in">size</span>() &amp;&amp; a.s&gt;bk[i].e)&#123;</span><br><span class="line">            now-=bk[i].c;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        mx=<span class="built_in">max</span>(mx,now);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-array-4-minimum-swaps-2/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/" class="post-title-link" itemprop="url">HackerRank Set And Map 3.Sherlock and Anagrams</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>670</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：Sherlock-and-Anagrams-HackerRank"><a href="#題目連結：Sherlock-and-Anagrams-HackerRank" class="headerlink" title="題目連結：Sherlock and Anagrams | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sherlock-and-anagrams/">Sherlock and Anagrams | HackerRank</a></h3><p>對於每個左右端窮舉即可，不過別做成O(N4logN)就好</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sherlockAndAnagrams</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,len=s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;len;j++)&#123;</span><br><span class="line">            multiset&lt;<span class="type">char</span>&gt; st,tt;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=j;k++)&#123;</span><br><span class="line">                st.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i+<span class="number">1</span>;k&lt;len-(j-i);k++)&#123;</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k+(j-i)]);</span><br><span class="line">                <span class="keyword">auto</span> it=tt.<span class="built_in">find</span>(s[k<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(it!=tt.<span class="built_in">end</span>()) tt.<span class="built_in">erase</span>(it);</span><br><span class="line">                <span class="keyword">if</span>(tt==st) ct++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-array-5-array-manipulation/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -543,6 +453,96 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/ojques/hacker-rank-set-and-map-2-two-strings/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/" class="post-title-link" itemprop="url">HackerRank Set And Map 3.Sherlock and Anagrams</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>670</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：Sherlock-and-Anagrams-HackerRank"><a href="#題目連結：Sherlock-and-Anagrams-HackerRank" class="headerlink" title="題目連結：Sherlock and Anagrams | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sherlock-and-anagrams/">Sherlock and Anagrams | HackerRank</a></h3><p>對於每個左右端窮舉即可，不過別做成O(N4logN)就好</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sherlockAndAnagrams</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,len=s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;len;j++)&#123;</span><br><span class="line">            multiset&lt;<span class="type">char</span>&gt; st,tt;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=j;k++)&#123;</span><br><span class="line">                st.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i+<span class="number">1</span>;k&lt;len-(j-i);k++)&#123;</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k+(j-i)]);</span><br><span class="line">                <span class="keyword">auto</span> it=tt.<span class="built_in">find</span>(s[k<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(it!=tt.<span class="built_in">end</span>()) tt.<span class="built_in">erase</span>(it);</span><br><span class="line">                <span class="keyword">if</span>(tt==st) ct++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -1016,7 +1016,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-national-106-2/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-national-106-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1030,7 +1030,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/contest/cpp-national-106-2/" class="post-title-link" itemprop="url">C++ 106全國賽 2. 自戀數</a>
+            <a href="/contest/cpp-national-106-1/" class="post-title-link" itemprop="url">C++ 106全國賽 1. 連號或不連號</a>
         </h2>
 
         <div class="post-meta">
@@ -1058,7 +1058,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>686</span>
+              <span>614</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -1077,12 +1077,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：c459-2-自戀數-高中生程式解題系統"><a href="#題目連結：c459-2-自戀數-高中生程式解題系統" class="headerlink" title="題目連結：c459. 2. 自戀數 - 高中生程式解題系統"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c459">c459. 2. 自戀數 - 高中生程式解題系統</a></h3><p>直接用字串轉數字配合題目敘述即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> base[<span class="number">15</span>][<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">12</span>;i++)&#123;</span><br><span class="line">        base[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;<span class="number">10</span>;j++)&#123;</span><br><span class="line">            base[i][j]=base[i][j<span class="number">-1</span>]*i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    string N;</span><br><span class="line">    <span class="type">int</span> b,n=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;b&gt;&gt;N;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;N.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        n*=b;</span><br><span class="line">        n+=N[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        sum+=base[(N[i]-<span class="string">&#x27;0&#x27;</span>)][N.<span class="built_in">size</span>()];</span><br><span class="line">    &#125;</span><br><span class="line">    string ans=(n==sum)?<span class="string">&quot;YES&quot;</span>:<span class="string">&quot;NO&quot;</span>;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：c299-1-連號或不連號-高中生程式解題系統"><a href="#題目連結：c299-1-連號或不連號-高中生程式解題系統" class="headerlink" title="題目連結：c299. 1. 連號或不連號 - 高中生程式解題系統"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c299">c299. 1. 連號或不連號 - 高中生程式解題系統</a></h3><p>排序後檢查即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="type">int</span> dt[<span class="number">105</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;dt[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(dt,dt+n);</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> ans=<span class="literal">true</span>;</span><br><span class="line">    cout&lt;&lt;dt[<span class="number">0</span>]&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;dt[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(dt[i]!=dt[i<span class="number">-1</span>]+<span class="number">1</span>) ans=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; yes&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; no&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/contest/cpp-national-106-2/#more" rel="contents">
+              <a class="btn" href="/contest/cpp-national-106-1/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
